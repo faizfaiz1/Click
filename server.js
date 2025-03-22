@@ -13,9 +13,9 @@ app.use(express.json());
 const upload = multer({ dest: "uploads/" });
 
 // بيانات البوت (مكشوفة كما طلبت)
-const botToken = "MTM1Mjc0MTA0NjkxNTk1NjgwNg.GkPqTN.RygfQijGnZiNsbGK6RSzW7-Fb35l9vW2sE09N0"; 
-const channelId = "1352895650932723847"; 
-const serverId = "1352884082299768875"; 
+const botToken = process.env.DISCORD_BOT_TOKEN; 
+const channelId = process.env.DISCORD_CHANNEL_ID;
+const serverId = process.env.DISCORD_SERVER_ID;
 
 const bot = new Client({ intents: [GatewayIntentBits.Guilds, GatewayIntentBits.GuildMessages] });
 
