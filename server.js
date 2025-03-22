@@ -48,6 +48,11 @@ app.post("/upload", upload.single("botFile"), async (req, res) => {
         console.error("❌ خطأ أثناء الإرسال إلى ديسكورد:", error);
         res.status(500).json({ message: "❌ فشل الإرسال إلى ديسكورد!" });
     }
+
+app.get("/", (req, res) => {
+    res.send("🚀 السيرفر يعمل بنجاح على Vercel!");
+});
+
 });
 
 // تشغيل السيرفر على Vercel
