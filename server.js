@@ -53,6 +53,22 @@ app.get("/", (req, res) => {
     res.send("🚀 السيرفر يعمل بنجاح على Vercel!");
 });
 
+const express = require("express");
+const app = express();
+const path = require("path");
+
+app.use(express.static("public")); // تأكد من أن ملفات HTML موجودة في مجلد "public"
+
+app.get("/", (req, res) => {
+    res.sendFile(path.join(__dirname, "public", "index.html"));
+});
+
+const PORT = process.env.PORT || 3000;
+app.listen(PORT, () => {
+    console.log(`🚀 Server running on port ${PORT}`);
+});
+
+
 });
 
 // تشغيل السيرفر على Vercel
